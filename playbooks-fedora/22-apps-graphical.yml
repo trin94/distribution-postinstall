@@ -51,31 +51,31 @@
 
         $HOME/bin/jetbrains-toolbox
 
-    - name: "Install Discord"
+    - name: "Install 'Discord'"
       community.general.flatpak:
         name: com.discordapp.Discord
         method: user
         state: present
 
-    - name: "Install Hexchat"
+    - name: "Install 'Hexchat'"
       community.general.flatpak:
         name: io.github.Hexchat
         method: user
         state: present
 
-    - name: "Install Teamspeak"
+    - name: "Install 'Teamspeak'"
       community.general.flatpak:
         name: com.teamspeak.TeamSpeak
         method: user
         state: present
 
-    - name: "Install Visual Studio Code"
+    - name: "Install 'Visual Studio Code'"
       community.general.flatpak:
         name: com.visualstudio.code
         method: user
         state: present
 
-    - name: "Install Telegram Messenger"
+    - name: "Install 'Telegram Messenger'"
       community.general.flatpak:
         name: org.telegram.desktop
         method: user
