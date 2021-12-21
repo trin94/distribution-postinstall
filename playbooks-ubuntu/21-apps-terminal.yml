@@ -1,0 +1,25 @@
+- name: "Install Terminal Applications"
+  hosts: localhost
+
+  tasks:
+    - name: "Install Terminal Applications via apt"
+      become: true
+      apt:
+        pkg:
+          - atool                     # Extraction tool
+          - bat                       # Alternative for cat (batcat)
+          - bpytop                    # Task manager
+          - exa                       # Alternative for fd
+          - fd-find                   # Alternative for find (fdfind)
+          - neofetch                  # Quickly show system info
+          - ripgrep                   # Alternative for grep
+#          - tldr                      # Simple examples for terminal applications
+#          - tokei                     # Programming language statistics
+          - vim                       # Terminal text editor
+          - curl                      # HTTP requests
+
+    - name: "Install Terminal Applications via snap"
+      become: true
+      community.general.snap:
+        name:
+          - procs                     # Alternative for ps

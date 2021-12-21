@@ -1,0 +1,18 @@
+- name: "Configure Repositories"
+  hosts: localhost
+
+  tasks:
+    - name: "Add Flatpak Remote 'flathub'"
+      community.general.flatpak_remote:
+        name: flathub
+        state: present
+        flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+        method: user
+
+    - name: "Add RPM fusion repos"
+      args:
+        executable: /bin/bash
+      become: yes
+      shell: |
+        dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+

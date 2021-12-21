@@ -1,0 +1,75 @@
+- name: "Install Graphical Applications"
+  hosts: localhost
+  roles:
+    - kewlfft.aur
+
+  tasks:
+    - name: "Install Graphical Applications (Pacman)"
+      become: true
+      community.general.pacman:
+        update_cache: yes
+        state: present
+        name:
+          - alacritty                 # Terminal emulator
+          - firefox                   # Web browser
+          - lutris                    # Installer & starter for games
+
+    - name: "Install Graphical Applications (Paru)"
+      aur:
+        state: present
+        name:
+          - jetbrains-toolbox         # Installer & starter for Jetbrains IDEs
+
+    - name: "Install Discord"
+      community.general.flatpak:
+        name: com.discordapp.Discord
+        method: user
+        state: present
+
+    - name: "Install Skype"
+      community.general.flatpak:
+        name: com.skype.Client
+        method: user
+        state: present
+
+    - name: "Install Spotify"
+      community.general.flatpak:
+        name: com.spotify.Client
+        method: user
+        state: present
+
+    - name: "Install Hexchat"
+      community.general.flatpak:
+        name: io.github.Hexchat
+        method: user
+        state: present
+
+    - name: "Install Teamspeak"
+      community.general.flatpak:
+        name: com.teamspeak.TeamSpeak
+        method: user
+        state: present
+
+    - name: "Install Visual Studio Code"
+      community.general.flatpak:
+        name: com.visualstudio.code
+        method: user
+        state: present
+
+    - name: "Install Celluloid"
+      community.general.flatpak:
+        name: io.github.celluloid_player.Celluloid
+        method: user
+        state: present
+
+    - name: "Install Telegram Messenger"
+      community.general.flatpak:
+        name: org.telegram.desktop
+        method: user
+        state: present
+
+    - name: "Install Kooha Screen Recorder"
+      community.general.flatpak:
+        name: io.github.seadve.Kooha
+        method: user
+        state: present

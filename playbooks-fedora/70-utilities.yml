@@ -1,0 +1,26 @@
+- name: "Install Utilities"
+  hosts: localhost
+
+  tasks:
+    - name: "Install 'texlive'"
+      become: yes
+      dnf:
+        state: present
+        name:
+          - texlive
+
+    - name: "Install 'android-tools'"
+      become: yes
+      dnf:
+        state: present
+        name:
+          - android-tools
+
+    - name: "Install 'jdk-src'"
+      become: yes
+      dnf:
+        state: present
+        name:
+          - java-11-openjdk-src
+
+

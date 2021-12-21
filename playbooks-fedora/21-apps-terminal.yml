@@ -1,0 +1,73 @@
+- name: "Install Terminal Applications"
+  hosts: localhost
+
+  tasks:
+    - name: "Install 'bat' - Modern 'cat' Alternative"
+      become: yes
+      dnf:
+        state: present
+        name:
+          - bat
+
+    - name: "Install 'bpytop'"
+      become: yes
+      dnf:
+        state: present
+        name:
+          - bpytop
+
+    - name: "Install 'dtrx'"
+      become: yes
+      pip:
+        state: present
+        name:
+          - dtrx
+
+    - name: "Install 'exa' - Modern 'ls' Alternative"
+      become: yes
+      dnf:
+        state: present
+        name:
+          - exa
+
+    - name: "Install 'fd-find' - Modern 'find' Alternative"
+      become: yes
+      dnf:
+        state: present
+        name:
+          - fd-find
+
+    - name: "Install 'neofetch'"
+      become: yes
+      dnf:
+        state: present
+        name:
+          - neofetch
+
+    - name: "Install 'procs' - Modern 'ps' Alternative"
+      become: yes
+      dnf:
+        state: present
+        name:
+          - procs
+
+    - name: "Install 'ripgrep' - Modern 'grep' Alternative"
+      become: yes
+      dnf:
+        state: present
+        name:
+          - ripgrep
+
+    - name: "Install 'tokei'"
+      become: yes
+      dnf:
+        state: present
+        name:
+          - tokei
+
+    - name: "Install 'vim'"
+      become: yes
+      dnf:
+        state: present
+        name:
+          - vim

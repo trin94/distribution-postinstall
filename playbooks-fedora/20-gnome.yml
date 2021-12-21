@@ -1,0 +1,37 @@
+- name: "Configure GNOME applications"
+  hosts: localhost
+
+  tasks:
+    - name: "Install 'gnome-tweaks'"
+      become: true
+      dnf:
+        state: present
+        name:
+          - gnome-tweaks
+
+    - name: "Install 'gnome-extensions-app'"
+      become: true
+      dnf:
+        state: present
+        name:
+          - gnome-extensions-app
+
+    - name: "Install 'Text Editor'"
+      community.general.flatpak:
+        name: org.gnome.TextEditor
+        method: user
+        state: present
+
+    - name: "Uninstall 'totem' - Video Player"
+      become: true
+      dnf:
+        state: absent
+        name:
+          - totem
+
+    - name: "Uninstall 'gedit' - Text Editor"
+      become: true
+      dnf:
+        state: absent
+        name:
+          - gedit

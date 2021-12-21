@@ -1,0 +1,32 @@
+- name: "Install Fonts"
+  hosts: localhost
+
+  vars:
+    custom_installer: "~/apps/installer"
+
+  tasks:
+    - name: "Clone Nerd-Font installer"
+      ansible.builtin.git:
+        repo: 'https://github.com/ryanoasis/nerd-fonts.git'
+        dest: "{{ custom_installer }}/font-installer"
+        depth: 1
+
+    - name: "Install JetBrains Mono Nerd Font"
+      shell: |
+        cd {{ custom_installer }}/font-installer
+        ./install.sh JetBrainsMono
+
+    - name: "Install Ubuntu Mono Nerd Font"
+      shell: |
+        cd {{ custom_installer }}/font-installer
+        ./install.sh UbuntuMono
+
+    - name: "Install Cascadia Code Nerd Font"
+      shell: |
+        cd {{ custom_installer }}/font-installer
+        ./install.sh CascadiaCode
+
+    - name: "Install Mononoki Nerd Font"
+      shell: |
+        cd {{ custom_installer }}/font-installer
+        ./install.sh Mononoki

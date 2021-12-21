@@ -1,0 +1,35 @@
+- name: "Install Paru and Flatpak"
+  hosts: localhost
+
+  tasks:
+    - name: "Install Paru Requirements"
+      become: true
+      community.general.pacman:
+        update_cache: yes
+        state: present
+        name:
+          - base-devel
+          - bison
+          - rustup
+
+    - name: "Install Paru"
+      shell: |
+        cd ~
+        git clone https://aur.archlinux.org/paru.git
+        cd paru
+        makepkg -si --noconfirm
+
+    - name: "Install Flatpak"
+      become: true
+      community.general.pacman:
+        update_cache: yes
+        state: present
+        name:
+          - flatpak
+
+    - name: "Add Flatpak Remote 'flathub'"
+      community.general.flatpak_remote:
+        name: flathub
+        state: present
+        flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+        method: user
