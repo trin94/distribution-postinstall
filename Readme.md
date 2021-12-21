@@ -8,7 +8,7 @@ cd ~/apps
 ## Fedora
 
 ```shell
-sudo dnf install ansible git
+sudo dnf install ansible git python3-pip
 ansible-galaxy collection install community.general
 ```
 
