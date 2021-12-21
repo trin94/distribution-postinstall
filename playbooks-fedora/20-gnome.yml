@@ -1,4 +1,4 @@
-- name: "Configure GNOME applications"
+- name: "Configure GNOME applications and shortcuts"
   hosts: localhost
 
   tasks:
@@ -35,3 +35,23 @@
         state: absent
         name:
           - gedit
+
+    - name: "Configure '<Super>Return' To Open 'alacritty'"
+      args:
+        executable: /bin/bash
+      shell: |
+        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name "'Terminal'"
+        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding "'<Super>Return'"
+        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command "'alacritty'"
+
+    - name: "Set Previously Configured Custom Key Bindings"
+      args:
+        executable: /bin/bash
+      shell: # Add a new entry for each new custom setting with 'customX' with X being the next number
+        gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
+
+    - name: "Set '<Shift><Super>q' To Close Current Window"
+      args:
+        executable: /bin/bash
+      shell: gsettings set org.gnome.desktop.wm.keybindings close "['<Shift><Super>q']"
+
