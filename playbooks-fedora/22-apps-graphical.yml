@@ -87,3 +87,8 @@
         method: user
         state: present
 
+    - name: "Install 'Spotify'"
+      community.general.flatpak:
+        name: com.spotify.Client
+        method: user
+        state: present
