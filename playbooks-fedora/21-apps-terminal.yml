@@ -58,12 +58,12 @@
         name:
           - ripgrep
 
-    - name: "Install 'tokei'"
+    - name: "Install 'scc'"
       become: yes
-      dnf:
+      community.general.snap:
         state: present
         name:
-          - tokei
+          - scc
 
     - name: "Install 'vim'"
       become: yes
