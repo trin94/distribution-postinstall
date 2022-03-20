@@ -13,54 +13,54 @@ ansible-playbook --ask-become-pass playbooks-fedora/00-distribution.yml
 
 It will ask for the root password.
 
-## 10 – Application Sources
+## 10 - GNOME
 
 In the root directory of this repository, run:
 
 ```shell
-ansible-playbook --ask-become-pass playbooks-fedora/10-application-sources.yml
+ansible-playbook --ask-become-pass playbooks-fedora/10-gnome.yml
 ```
 
 It will ask for the root password.
 
-## 20 - GNOME
+## 20 - Terminal Applications
 
 In the root directory of this repository, run:
 
 ```shell
-ansible-playbook --ask-become-pass playbooks-fedora/20-gnome.yml
+ansible-playbook --ask-become-pass playbooks-fedora/20-apps-terminal.yml
 ```
 
 It will ask for the root password.
 
-## 21 - Terminal Applications
+## 30 - Graphical Applications
 
 In the root directory of this repository, run:
 
 ```shell
-ansible-playbook --ask-become-pass playbooks-fedora/21-apps-terminal.yml
+ansible-playbook --ask-become-pass playbooks-fedora/30-apps-graphical.yml
 ```
 
 It will ask for the root password.
 
-## 22 - Graphical Applications
-
-In the root directory of this repository, run:
-
-```shell
-ansible-playbook --ask-become-pass playbooks-fedora/22-apps-graphical.yml
-```
-
-It will ask for the root password.
-
-## 30 - Dotfiles Configuration
+## 40 - Dotfiles
 
 **Attention**: This script will override the `.bashrc` file
 
 In the root directory of this repository, run:
 
 ```shell
-ansible-playbook --ask-become-pass playbooks-fedora/30-dotfiles.yml
+ansible-playbook --ask-become-pass playbooks-fedora/40-dotfiles.yml
+```
+
+It will ask for the root password.
+
+## 50 - Utilities
+
+In the root directory of this repository, run:
+
+```shell
+ansible-playbook --ask-become-pass playbooks-fedora/50-utilities.yml
 ```
 
 It will ask for the root password.
@@ -71,16 +71,6 @@ In the root directory of this repository, run:
 
 ```shell
 ansible-playbook --ask-become-pass playbooks-fedora/60-fonts.yml
-```
-
-It will ask for the root password.
-
-## 70 - Utilities
-
-In the root directory of this repository, run:
-
-```shell
-ansible-playbook --ask-become-pass playbooks-fedora/70-utilities.yml
 ```
 
 It will ask for the root password.
