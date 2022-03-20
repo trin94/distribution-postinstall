@@ -19,13 +19,6 @@
         name:
           - firefox
 
-    - name: "Install 'mpv'"
-      become: yes
-      dnf:
-        state: present
-        name:
-          - mpv
-
     - name: "Install 'JetBrains Toolbox App'"
       args:
         executable: /bin/bash
@@ -50,6 +43,12 @@
         curl -sL ${TOOLBOX_URL} | tar xvz --directory=${HOME}/bin --strip-components=1
 
         $HOME/bin/jetbrains-toolbox
+
+    - name: "Install 'mpv'"
+      community.general.flatpak:
+        name: io.mpv.Mpv
+        method: user
+        state: present
 
     - name: "Install 'Discord'"
       community.general.flatpak:
