@@ -5,19 +5,6 @@
     custom_programs: "~/apps/programs"
 
   tasks:
-    - name: "Install 'Alacritty'"
-      become: yes
-      dnf:
-        state: present
-        name:
-          - alacritty
-
-    - name: "Install 'Firefox'"
-      become: yes
-      dnf:
-        state: present
-        name:
-          - firefox
 
     - name: "Install 'JetBrains Toolbox App'"
       args:
@@ -43,6 +30,13 @@
         curl -sL ${TOOLBOX_URL} | tar xvz --directory=${HOME}/bin --strip-components=1
 
         $HOME/bin/jetbrains-toolbox
+
+    - name: "Install 'Alacritty'"
+      become: yes
+      dnf:
+        state: present
+        name:
+          - alacritty
 
     - name: "Install 'mpv'"
       community.general.flatpak:
