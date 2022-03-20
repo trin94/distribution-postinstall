@@ -8,3 +8,49 @@
         path: /etc/dnf/dnf.conf
         regexp: 'defaultyes='
         line: defaultyes=True
+
+    - name: "Add RPM fusion repos"
+      args:
+        executable: /bin/bash
+      become: yes
+      shell: |
+        dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+    - name: "Add Flatpak Remote 'flathub'"
+      community.general.flatpak_remote:
+        name: flathub
+        state: present
+        method: user
+        flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+
+    - name: "Remove Flatpak Remote 'flathub' - system"
+      community.general.flatpak_remote:
+        name: flathub
+        state: absent
+        method: system
+
+    - name: "Remove Flatpak Remote 'fedora'"
+      community.general.flatpak_remote:
+        name: fedora
+        state: absent
+        method: user
+
+    - name: "Install 'snap'"
+      become: true
+      dnf:
+        state: present
+        name:
+          - snapd
+
+    - name: "Replace Firefox 1/2 - Remove 'Firefox' (rpm)"
+      become: yes
+      dnf:
+        state: absent
+        name:
+          - firefox
+
+    - name: "Replace Firefox 2/2 - Install 'Firefox' (flatpak)"
+      community.general.flatpak:
+        name: org.mozilla.firefox
+        state: present
+        method: user
