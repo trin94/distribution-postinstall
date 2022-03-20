@@ -80,12 +80,6 @@
         method: user
         state: present
 
-    - name: "Install 'Geary'"
-      community.general.flatpak:
-        name: org.gnome.Geary
-        method: user
-        state: present
-
     - name: "Install 'Spotify'"
       community.general.flatpak:
         name: com.spotify.Client
