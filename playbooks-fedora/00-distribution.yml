@@ -35,13 +35,6 @@
         state: absent
         method: user
 
-    - name: "Install 'snap'"
-      become: true
-      dnf:
-        state: present
-        name:
-          - snapd
-
     - name: "Replace Firefox 1/2 - Remove 'Firefox' (rpm)"
       become: yes
       dnf:
