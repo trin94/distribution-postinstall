@@ -58,12 +58,12 @@
         name:
           - ripgrep
 
-    - name: "Install 'scc' - Source Code Counter"
+    - name: "Install 'tokei'"
       become: yes
-      community.general.snap:
+      dnf:
         state: present
         name:
-          - scc
+          - tokei
 
     - name: "Install 'wormhole' - Easy File Transfer"
       become: yes
