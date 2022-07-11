@@ -92,6 +92,13 @@
         method: user
         state: present
 
+    - name: "Install 'Steam'"
+      become: yes
+      dnf:
+        state: present
+        name:
+          - steam
+
     - name: "Install 'Spotify'"
       community.general.flatpak:
         name: com.spotify.Client
