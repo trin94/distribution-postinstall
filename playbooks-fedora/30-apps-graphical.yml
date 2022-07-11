@@ -91,3 +91,9 @@
         name: com.microsoft.Teams
         method: user
         state: present
+
+    - name: "Install 'Amberol'"
+      community.general.flatpak:
+        name: io.bassi.Amberol
+        method: user
+        state: present
