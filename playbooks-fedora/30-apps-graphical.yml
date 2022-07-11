@@ -110,3 +110,8 @@
         method: user
         state: present
 
+    - name: "Install 'GNOME Text Editor'"
+      community.general.flatpak:
+        name: org.gnome.TextEditor
+        method: user
+        state: present
