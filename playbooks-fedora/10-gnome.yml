@@ -21,6 +21,11 @@
         executable: /bin/bash
       shell: gsettings set org.gnome.desktop.wm.keybindings close "['<Shift><Super>q']"
 
+    - name: "Set Favorite Apps"
+      args:
+        executable: /bin/bash
+        shell: gsettings set org.gnome.shell favorite-apps "['org.gnome.Nautilus.desktop', 'org.gnome.TextEditor.desktop', 'org.mozilla.firefox.desktop', 'jetbrains-idea.desktop', 'jetbrains-pycharm.desktop', 'jetbrains-webstorm.desktop', 'io.bassi.Amberol.desktop', 'steam.desktop', 'com.discordapp.Discord.desktop', 'org.telegram.desktop.desktop', 'com.microsoft.Teams.desktop', 'com.teamspeak.TeamSpeak.desktop']"
+
     - name: "Remove 'totem' - Video Player"
       become: true
       dnf:
@@ -41,15 +46,3 @@
         state: present
         name:
           - gnome-tweaks
-
-    - name: "Install 'gnome-extensions-app'"
-      community.general.flatpak:
-        name: org.gnome.Extensions
-        state: present
-        method: user
-
-    - name: "Install 'Text Editor'"
-      community.general.flatpak:
-        name: org.gnome.TextEditor
-        state: present
-        method: user
