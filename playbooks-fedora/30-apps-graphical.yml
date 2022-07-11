@@ -79,3 +79,9 @@
         name: com.spotify.Client
         method: user
         state: present
+
+    - name: "Install 'Flatseal'"
+      community.general.flatpak:
+        name: com.github.tchx84.Flatseal
+        method: user
+        state: present
