@@ -85,3 +85,9 @@
         name: com.github.tchx84.Flatseal
         method: user
         state: present
+
+    - name: "Install 'Microsoft Teams'"
+      community.general.flatpak:
+        name: com.microsoft.Teams
+        method: user
+        state: present
