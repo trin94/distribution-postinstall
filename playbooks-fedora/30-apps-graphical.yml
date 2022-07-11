@@ -103,3 +103,10 @@
         name: org.audacityteam.Audacity
         method: user
         state: present
+
+    - name: "Install 'Extensions'"
+      community.general.flatpak:
+        name: org.gnome.Extensions
+        method: user
+        state: present
+
