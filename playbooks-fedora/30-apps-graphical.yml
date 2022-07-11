@@ -38,60 +38,6 @@
         name:
           - alacritty
 
-    - name: "Install 'mpv'"
-      community.general.flatpak:
-        name: io.mpv.Mpv
-        method: user
-        state: present
-
-    - name: "Install 'Discord'"
-      community.general.flatpak:
-        name: com.discordapp.Discord
-        method: user
-        state: present
-
-    - name: "Install 'Hexchat'"
-      community.general.flatpak:
-        name: io.github.Hexchat
-        method: user
-        state: present
-
-    - name: "Install 'Teamspeak'"
-      community.general.flatpak:
-        name: com.teamspeak.TeamSpeak
-        method: user
-        state: present
-
-    - name: "Install 'Visual Studio Code'"
-      community.general.flatpak:
-        name: com.visualstudio.code
-        method: user
-        state: present
-
-    - name: "Install 'Telegram Messenger'"
-      community.general.flatpak:
-        name: org.telegram.desktop
-        method: user
-        state: present
-
-    - name: "Install 'Spotify'"
-      community.general.flatpak:
-        name: com.spotify.Client
-        method: user
-        state: present
-
-    - name: "Install 'Flatseal'"
-      community.general.flatpak:
-        name: com.github.tchx84.Flatseal
-        method: user
-        state: present
-
-    - name: "Install 'Microsoft Teams'"
-      community.general.flatpak:
-        name: com.microsoft.Teams
-        method: user
-        state: present
-
     - name: "Install 'Amberol'"
       community.general.flatpak:
         name: io.bassi.Amberol
@@ -104,14 +50,68 @@
         method: user
         state: present
 
+    - name: "Install 'Discord'"
+      community.general.flatpak:
+        name: com.discordapp.Discord
+        method: user
+        state: present
+
     - name: "Install 'Extensions'"
       community.general.flatpak:
         name: org.gnome.Extensions
         method: user
         state: present
 
+    - name: "Install 'Flatseal'"
+      community.general.flatpak:
+        name: com.github.tchx84.Flatseal
+        method: user
+        state: present
+
     - name: "Install 'GNOME Text Editor'"
       community.general.flatpak:
         name: org.gnome.TextEditor
+        method: user
+        state: present
+
+    - name: "Install 'Hexchat'"
+      community.general.flatpak:
+        name: io.github.Hexchat
+        method: user
+        state: present
+
+    - name: "Install 'Microsoft Teams'"
+      community.general.flatpak:
+        name: com.microsoft.Teams
+        method: user
+        state: present
+
+    - name: "Install 'mpv'"
+      community.general.flatpak:
+        name: io.mpv.Mpv
+        method: user
+        state: present
+
+    - name: "Install 'Spotify'"
+      community.general.flatpak:
+        name: com.spotify.Client
+        method: user
+        state: present
+
+    - name: "Install 'Teamspeak'"
+      community.general.flatpak:
+        name: com.teamspeak.TeamSpeak
+        method: user
+        state: present
+
+    - name: "Install 'Telegram Messenger'"
+      community.general.flatpak:
+        name: org.telegram.desktop
+        method: user
+        state: present
+
+    - name: "Install 'Visual Studio Code'"
+      community.general.flatpak:
+        name: com.visualstudio.code
         method: user
         state: present
