@@ -65,13 +65,6 @@
         name:
           - tokei
 
-    - name: "Install 'wormhole' - Easy File Transfer"
-      become: yes
-      community.general.snap:
-        state: present
-        name:
-          - wormhole
-
     - name: "Install 'vim' - Text Editor"
       become: yes
       dnf:
