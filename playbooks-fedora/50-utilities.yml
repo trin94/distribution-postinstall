@@ -21,6 +21,6 @@
       dnf:
         state: present
         name:
-          - java-11-openjdk-src
+          - java-17-openjdk-src
 
 
