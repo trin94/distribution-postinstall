@@ -9,13 +9,6 @@
         name:
           - bat
 
-    - name: "Install 'bpytop' - Interactive System Monitor"
-      become: yes
-      dnf:
-        state: present
-        name:
-          - bpytop
-
     - name: "Install 'dtrx' - User Friendly Archive Extraction"
       become: yes
       pip:
