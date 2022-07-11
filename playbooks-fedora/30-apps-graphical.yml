@@ -97,3 +97,9 @@
         name: io.bassi.Amberol
         method: user
         state: present
+
+    - name: "Install 'Audacity'"
+      community.general.flatpak:
+        name: org.audacityteam.Audacity
+        method: user
+        state: present
