@@ -50,6 +50,12 @@
         method: user
         state: present
 
+    - name: "Install 'BlackBox'"
+      community.general.flatpak:
+        name: com.raggesilver.BlackBox
+        method: user
+        state: present
+
     - name: "Install 'Discord'"
       community.general.flatpak:
         name: com.discordapp.Discord
