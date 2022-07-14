@@ -23,7 +23,7 @@
       become: true
       shell: |
         cd ~
-        bash {{ starship_installer }} -y
+        sh {{ starship_installer }} -y
 
     - name: "Clone & Setup Dotfiles"
       shell: |
