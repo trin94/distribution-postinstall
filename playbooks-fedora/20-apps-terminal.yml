@@ -58,9 +58,17 @@
         name:
           - tokei
 
-    - name: "Install 'vim' - Text Editor"
+    - name: "Remove 'vim'"
+      become: yes
+      dnf:
+        state: absent
+        name:
+          - vim
+
+    - name: "Install 'NeoVim'"
       become: yes
       dnf:
         state: present
         name:
-          - vim
+          - neovim
+          - python3-neovim
