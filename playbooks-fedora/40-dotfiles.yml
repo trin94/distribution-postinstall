@@ -38,7 +38,7 @@
     - name: "Ensure Vim Autoload Directory Exists"
       file:
         state: directory
-        path: ~/.vim/autoload
+        path: ~/.local/share/nvim/site/autoload
 
     - name: "Install Vim-Plug"
       get_url:
