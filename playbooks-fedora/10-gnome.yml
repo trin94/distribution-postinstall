@@ -16,6 +16,11 @@
         executable: /bin/bash
       shell: gsettings set org.gnome.desktop.wm.keybindings close "['<Shift><Super>q']"
 
+    - name: "Disable Hot Corner"
+      args:
+        executable: /bin/bash
+      shell: gsettings set org.gnome.desktop.interface enable-hot-corners false
+
     - name: "Set Favorite Apps"
       args:
         executable: /bin/bash
