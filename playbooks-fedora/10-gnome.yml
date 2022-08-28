@@ -21,6 +21,11 @@
         executable: /bin/bash
       shell: gsettings set org.gnome.desktop.interface enable-hot-corners false
 
+    - name: "Disable Animations"
+      args:
+        executable: /bin/bash
+      shell: gsettings set org.gnome.desktop.interface enable-animations false
+
     - name: "Set Favorite Apps"
       args:
         executable: /bin/bash
