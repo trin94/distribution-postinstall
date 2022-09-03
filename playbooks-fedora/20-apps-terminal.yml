@@ -16,6 +16,23 @@
         name:
           - dtrx
 
+#    - name: 'Install dust - Modern du alternative'
+#      become: yes
+#      args:
+#        executable: /bin/bash
+#      shell: |
+#        VERSION="v0.8.3"
+#        FILE_NAME="dust-$VERSION-x86_64-unknown-linux-musl"
+#        FILE_NAME_FULL="${FILE_NAME}.tar.gz"
+#        curl -s https://api.github.com/repos/bootandy/dust/releases/latest \
+#          | grep "browser_download_url.*$FILE_NAME_FULL" \
+#          | cut -d : -f 2,3 \
+#          | tr -d \" \
+#          | wget -qi -
+#        tar -xvzf "$FILE_NAME_FULL" "$FILE_NAME/dust"
+#        mv "$FILE_NAME/dust" /usr/local/bin/
+#        rm -rf "$FILE_NAME/dust"
+
     - name: "Install 'exa' - Modern 'ls' Alternative"
       become: yes
       dnf:
