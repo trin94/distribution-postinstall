@@ -80,12 +80,6 @@
         method: user
         state: present
 
-    - name: "Install 'Microsoft Teams'"
-      community.general.flatpak:
-        name: com.microsoft.Teams
-        method: user
-        state: present
-
     - name: "Install 'mpv'"
       community.general.flatpak:
         name: io.mpv.Mpv
