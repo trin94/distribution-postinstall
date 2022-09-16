@@ -8,14 +8,14 @@
     - name: "Set dnf defaultyes to True"
       become: yes
       ansible.builtin.lineinfile:
-        path: {{ dnf_config }}
+        path: '{{ dnf_config }}'
         regexp: 'defaultyes='
         line: defaultyes=True
 
     - name: "Set dnf max_parallel_downloads to 10"
       become: yes
       ansible.builtin.lineinfile:
-        path: {{ dnf_config }}
+        path: '{{ dnf_config }}'
         regexp: 'max_parallel_downloads='
         line: max_parallel_downloads=10
 
