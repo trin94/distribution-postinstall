@@ -9,7 +9,7 @@
         regexp: 'defaultyes='
         line: defaultyes=True
 
-    - name: "Add RPM fusion repos"
+    - name: "Add RPM Fusion Repos"
       args:
         executable: /bin/bash
       become: yes
