@@ -23,6 +23,13 @@
       shell: |
         dnf config-manager --set-disabled google-chrome
 
+    - name: "Disable 'phracek-PyCharm' Repo"
+      args:
+        executable: /bin/bash
+      become: yes
+      shell: |
+        dnf config-manager --set-disabled phracek-PyCharm
+
     - name: "Add Flatpak Remote 'flathub'"
       community.general.flatpak_remote:
         name: flathub
