@@ -116,9 +116,3 @@
         name: org.telegram.desktop
         method: user
         state: present
-
-    - name: "Install 'Visual Studio Code'"
-      community.general.flatpak:
-        name: com.visualstudio.code
-        method: user
-        state: present
