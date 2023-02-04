@@ -33,12 +33,11 @@
         name:
           - dnf-plugins-core
 
-    - name: "Disable 'google-chrome' Repo"
-      args:
-        executable: /bin/bash
+    - name: "Remove 'google-chrome' Repo"
       become: yes
-      shell: |
-        dnf config-manager --set-disabled google-chrome
+      ansible.builtin.file:
+        path: /etc/yum.repos.d/google-chrome.repo
+        state: absent
 
     - name: "Disable 'phracek-PyCharm' Repo"
       args:
@@ -78,3 +77,9 @@
         name: org.mozilla.firefox
         state: present
         method: user
+
+    - name: "Enable dnf-makecache.timer"
+      ansible.builtin.systemd:
+        name: dnf-makecache.timer
+        enabled: true
+        state: started
