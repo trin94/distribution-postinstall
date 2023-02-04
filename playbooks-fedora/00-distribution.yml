@@ -39,12 +39,11 @@
         path: /etc/yum.repos.d/google-chrome.repo
         state: absent
 
-    - name: "Disable 'phracek-PyCharm' Repo"
-      args:
-        executable: /bin/bash
+    - name: "Remove 'phracek-PyCharm' Repo"
       become: yes
-      shell: |
-        dnf config-manager --set-disabled phracek-PyCharm
+      ansible.builtin.file:
+        path: /etc/yum.repos.d/phracek-PyCharm.repo
+        state: absent
 
     - name: "Add Flatpak Remote 'flathub'"
       community.general.flatpak_remote:
