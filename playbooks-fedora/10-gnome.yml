@@ -26,6 +26,11 @@
         executable: /bin/bash
       shell: gsettings set org.gnome.desktop.interface enable-animations false
 
+    - name: "Disable search provider gnome-software"
+      args:
+        executable: /bin/bash
+      shell: dconf write /org/gnome/desktop/search-providers/disabled "['org.gnome.Software.desktop']"
+
     - name: "Set Clock-format to '12h'"
       args:
         executable: /bin/bash
