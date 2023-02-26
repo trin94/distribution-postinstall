@@ -8,6 +8,13 @@
         state: present
         name:
           - texlive
+          - texlive-flowfram
+          - texlive-xcharter
+          - texlive-cyrillic
+          - texlive-collection-fontsextra
+          - texlive-microtype
+          - texlive-babel-german
+          - texlive-collection-latexextra
 
     - name: "Install 'android-tools'"
       become: yes
