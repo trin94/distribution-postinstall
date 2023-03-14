@@ -19,6 +19,13 @@
         regexp: 'max_parallel_downloads='
         line: max_parallel_downloads=20
 
+    - name: "Set deltarpm to False"
+      become: yes
+      ansible.builtin.lineinfile:
+        path: '{{ dnf_config }}'
+        regexp: 'deltarpm='
+        line: deltarpm=False
+
     - name: "Add RPM Fusion Repos"
       args:
         executable: /bin/bash
