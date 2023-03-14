@@ -17,7 +17,7 @@
       ansible.builtin.lineinfile:
         path: '{{ dnf_config }}'
         regexp: 'max_parallel_downloads='
-        line: max_parallel_downloads=10
+        line: max_parallel_downloads=20
 
     - name: "Add RPM Fusion Repos"
       args:
