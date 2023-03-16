@@ -5,6 +5,14 @@
     dnf_config: '/etc/dnf/dnf.conf'
 
   tasks:
+    - name: "Install 'dnf5'"
+      become: yes
+      dnf:
+        state: present
+        name:
+          - dnf5
+          - dnf5-plugins
+
     - name: "Set dnf defaultyes to True"
       become: yes
       ansible.builtin.lineinfile:
