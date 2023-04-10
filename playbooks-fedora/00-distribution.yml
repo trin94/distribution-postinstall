@@ -50,19 +50,6 @@
         method: user
         flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
 
-    - name: "Replace Firefox 1/2 - Remove 'Firefox' (rpm)"
-      become: yes
-      dnf:
-        state: absent
-        name:
-          - firefox
-
-    - name: "Replace Firefox 2/2 - Install 'Firefox' (flatpak)"
-      community.general.flatpak:
-        name: org.mozilla.firefox
-        state: present
-        method: user
-
     - name: "Set dnf defaultyes to True"
       become: yes
       ansible.builtin.lineinfile:

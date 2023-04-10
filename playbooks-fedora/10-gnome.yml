@@ -44,36 +44,9 @@
         executable: /bin/bash
       shell: gsettings set org.gnome.shell favorite-apps "['org.gnome.Nautilus.desktop', 'org.gnome.TextEditor.desktop', 'org.mozilla.firefox.desktop', 'jetbrains-idea.desktop', 'jetbrains-pycharm.desktop', 'jetbrains-webstorm.desktop', 'io.bassi.Amberol.desktop', 'steam.desktop', 'com.discordapp.Discord.desktop', 'org.telegram.desktop.desktop', 'com.microsoft.Teams.desktop', 'com.teamspeak.TeamSpeak.desktop']"
 
-    - name: "Remove 'totem' - Video Player"
-      become: true
-      dnf:
-        state: absent
-        name:
-          - totem
-
-    - name: "Remove 'gedit' - Text Editor"
-      become: true
-      dnf:
-        state: absent
-        name:
-          - gedit
-
     - name: "Install 'gnome-tweaks'"
       become: true
       dnf:
         state: present
         name:
           - gnome-tweaks
-
-    - name: "Remove 'eog' - Image Viewer"
-      become: true
-      dnf:
-        state: absent
-        name:
-          - eog
-
-    - name: "Install 'loupe' - Image Viewer"
-      community.general.flatpak:
-        name: org.gnome.Loupe
-        state: present
-        method: user

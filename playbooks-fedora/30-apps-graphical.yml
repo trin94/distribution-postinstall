@@ -5,6 +5,33 @@
     custom_programs: "~/apps/programs"
 
   tasks:
+    - name: "Remove 'eog'"
+      become: true
+      dnf:
+        state: absent
+        name:
+          - eog
+
+    - name: "Remove 'Firefox'"
+      become: yes
+      dnf:
+        state: absent
+        name:
+          - firefox
+
+    - name: "Remove 'Gedit'"
+      become: true
+      dnf:
+        state: absent
+        name:
+          - gedit
+
+    - name: "Remove 'Totem'"
+      become: true
+      dnf:
+        state: absent
+        name:
+          - totem
 
     - name: "Install 'JetBrains Toolbox App'"
       args:
@@ -68,6 +95,12 @@
         method: user
         state: present
 
+    - name: "Install 'Firefox' (flatpak)"
+      community.general.flatpak:
+        name: org.mozilla.firefox
+        state: present
+        method: user
+
     - name: "Install 'Flatseal'"
       community.general.flatpak:
         name: com.github.tchx84.Flatseal
@@ -85,6 +118,12 @@
         name: io.github.Hexchat
         method: user
         state: present
+
+    - name: "Install 'loupe' - Image Viewer"
+      community.general.flatpak:
+        name: org.gnome.Loupe
+        state: present
+        method: user
 
     - name: "Install 'mpv'"
       community.general.flatpak:
