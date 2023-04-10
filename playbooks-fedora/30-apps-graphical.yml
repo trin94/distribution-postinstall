@@ -12,6 +12,13 @@
         name:
           - eog
 
+    - name: "Remove 'gnome-photos'"
+      become: true
+      dnf:
+        state: absent
+        name:
+          - gnome-photos
+
     - name: "Remove 'Firefox'"
       become: yes
       dnf:
