@@ -64,3 +64,16 @@
         state: present
         name:
           - gnome-tweaks
+
+    - name: "Remove 'eog' - Image Viewer"
+      become: true
+      dnf:
+        state: absent
+        name:
+          - eog
+
+    - name: "Install 'loupe' - Image Viewer"
+      community.general.flatpak:
+        name: org.gnome.Loupe
+        state: present
+        method: user
