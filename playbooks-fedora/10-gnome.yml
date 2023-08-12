@@ -44,6 +44,11 @@
         executable: /bin/bash
       shell: gsettings set org.gnome.shell favorite-apps "['org.gnome.Nautilus.desktop', 'org.gnome.TextEditor.desktop', 'org.mozilla.firefox.desktop', 'jetbrains-idea.desktop', 'jetbrains-pycharm.desktop', 'jetbrains-webstorm.desktop', 'io.bassi.Amberol.desktop', 'steam.desktop', 'com.discordapp.Discord.desktop', 'org.telegram.desktop.desktop', 'com.microsoft.Teams.desktop', 'com.teamspeak.TeamSpeak.desktop']"
 
+    - name: "Set Keyboard Layout to German (US)"
+      args:
+        executable: /bin/bash
+      shell: gsettings set org.gnome.desktop.input-sources sources  "[('xkb', 'de+us')]"
+
     - name: "Install 'gnome-tweaks'"
       become: true
       dnf:
