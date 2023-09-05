@@ -1,4 +1,4 @@
-- name: "Configure Java"
+- name: "Install & configure Java"
   hosts: localhost
 
   tasks:

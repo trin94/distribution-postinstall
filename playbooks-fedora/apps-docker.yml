@@ -1,4 +1,4 @@
-- name: "Install Docker"
+- name: "Install & configure Docker"
   hosts: localhost
 
   tasks:

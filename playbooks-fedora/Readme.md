@@ -11,11 +11,10 @@ ansible-playbook --ask-become-pass 40-dotfiles.yml
 ansible-playbook --ask-become-pass 50-utilities.yml
 ansible-playbook --ask-become-pass 60-fonts.yml
 
-ansible-playbook --ask-become-pass 80-apps-git.yml
-ansible-playbook --ask-become-pass 80-apps-java.yml
-
-ansible-playbook --ask-become-pass 90-apps-docker.yml
-ansible-playbook --ask-become-pass 91-apps-node.yml
+ansible-playbook --ask-become-pass apps-docker.yml
+ansible-playbook --ask-become-pass apps-git.yml
+ansible-playbook --ask-become-pass apps-java.yml
+ansible-playbook --ask-become-pass apps-node.yml
 ```
 
 Gotta supply the root password.

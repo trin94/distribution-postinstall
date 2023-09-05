@@ -1,4 +1,4 @@
-- name: "Install Nodejs & Typescript"
+- name: "Install & configure Nodejs & Typescript"
   hosts: localhost
 
   tasks:
