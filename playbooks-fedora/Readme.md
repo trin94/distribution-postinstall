@@ -11,7 +11,7 @@ ansible-playbook --ask-become-pass 40-dotfiles.yml
 ansible-playbook --ask-become-pass 50-utilities.yml
 ansible-playbook --ask-become-pass 60-fonts.yml
 
-ansible-playbook --ask-become-pass 80-config-cli-tools.yml
+ansible-playbook --ask-become-pass 80-apps-git.yml
 
 ansible-playbook --ask-become-pass 90-apps-docker.yml
 ansible-playbook --ask-become-pass 91-apps-node.yml

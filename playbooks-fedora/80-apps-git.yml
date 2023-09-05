@@ -1,8 +1,8 @@
-- name: "Configure CLI Tools"
+- name: "Configure Git"
   hosts: localhost
 
   tasks:
-    - name: "Git - Set default branch to 'main'"
+    - name: "Set default branch to 'main'"
       args:
         executable: /bin/bash
       shell: |
