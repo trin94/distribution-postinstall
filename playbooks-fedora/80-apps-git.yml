@@ -2,8 +2,35 @@
   hosts: localhost
 
   tasks:
+    - name: "Install credential helper"
+      become: yes
+      dnf:
+        state: present
+        name:
+          - git-credential-libsecret
+          - libsecret
+          - seahorse
+
     - name: "Set default branch to 'main'"
-      args:
-        executable: /bin/bash
-      shell: |
-        git config --global init.defaultBranch main
+      community.general.git_config:
+        scope: global
+        name: init.defaultBranch
+        value: main
+
+    - name: "Configure mail"
+      community.general.git_config:
+        scope: global
+        name: user.email
+        value: elias.mr1@gmail.com
+
+    - name: "Configure name"
+      community.general.git_config:
+        scope: global
+        name: user.name
+        value: Elias Mueller
+
+    - name: "Configure credential helper"
+      community.general.git_config:
+        scope: global
+        name: credential.helper
+        value: libsecret
