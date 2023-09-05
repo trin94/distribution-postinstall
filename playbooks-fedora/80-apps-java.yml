@@ -28,13 +28,7 @@
       shell: |
         alternatives --auto java
 
-    - name: "Set Java environment variables - Create empty /etc/profile.d/java-custom.sh"
-      become: true
-      file:
-        path: "/etc/profile.d/java-custom.sh"
-        state: touch
-
-    - name: "Set Java environment variables"
+    - name: "Set global Java environment variables"
       become: true
       copy:
         dest: "/etc/profile.d/java-custom.sh"
