@@ -65,11 +65,31 @@
 
         $HOME/bin/jetbrains-toolbox
 
-    - name: "Install '1Password'"
-      community.general.flatpak:
-        name: https://downloads.1password.com/linux/flatpak/1Password.flatpakref
-        method: user
+    - name: "Install '1Password' - Add key for the 1Password repo"
+      become: yes
+      ansible.builtin.rpm_key:
         state: present
+        key: https://downloads.1password.com/linux/keys/1password.asc
+
+    - name: "Install '1Password' - Add 1password repo"
+      become: true
+      copy:
+        dest: "/etc/yum.repos.d/1password.repo"
+        content: |
+          [1password]
+          name=1Password Stable Channel
+          baseurl=https://downloads.1password.com/linux/rpm/stable/$basearch
+          enabled=1
+          gpgcheck=1
+          repo_gpgcheck=1
+          gpgkey="https://downloads.1password.com/linux/keys/1password.asc"
+
+    - name: "Install '1password'"
+      become: yes
+      dnf:
+        state: present
+        name:
+          - 1password
 
     - name: "Install 'Alacritty'"
       become: yes
