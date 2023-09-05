@@ -22,11 +22,3 @@
         state: present
         name:
           - android-tools
-
-    - name: "Install 'OpenJdk'"
-      become: yes
-      dnf:
-        state: present
-        name:
-          - java-17-openjdk-src
-          - java-17-openjdk-javadoc
