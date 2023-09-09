@@ -33,12 +33,12 @@
 #        mv "$FILE_NAME/dust" /usr/local/bin/
 #        rm -rf "$FILE_NAME/dust"
 
-    - name: "Install 'exa' - Modern 'ls' Alternative"
+    - name: "Install 'lsd' - Modern 'ls' Alternative"
       become: yes
       dnf:
         state: present
         name:
-          - exa
+          - lsd
 
     - name: "Install 'fd-find' - Modern 'find' Alternative"
       become: yes
