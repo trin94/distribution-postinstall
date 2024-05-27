@@ -47,12 +47,12 @@
         name:
           - fd-find
 
-    - name: "Install 'neofetch' - System Info"
+    - name: "Install 'fastfetch' - System Info"
       become: yes
       dnf:
         state: present
         name:
-          - neofetch
+          - fastfetch
 
     - name: "Install 'procs' - Modern 'ps' Alternative"
       become: yes
