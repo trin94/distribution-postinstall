@@ -19,13 +19,6 @@
         name:
           - gnome-photos
 
-    - name: "Remove 'Firefox'"
-      become: yes
-      dnf:
-        state: absent
-        name:
-          - firefox
-
     - name: "Remove 'Gedit'"
       become: true
       dnf:
@@ -128,12 +121,6 @@
         name: org.gnome.Extensions
         method: user
         state: present
-
-    - name: "Install 'Firefox' (flatpak)"
-      community.general.flatpak:
-        name: org.mozilla.firefox
-        state: present
-        method: user
 
     - name: "Install 'Flatseal'"
       community.general.flatpak:
