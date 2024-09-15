@@ -70,7 +70,7 @@
     # teamspeak_client # --FLATPAK-- # The TeamSpeak voice communication tool
     hexchat # A popular and easy to use graphical IRC (chat) client
     # loupe # --FLATPAK-- # A simple image viewer application written with GTK4 and Rust
-    gnome-text-editor # A Text Editor for GNOME
+    # gnome-text-editor # --FLATPAK-- # A Text Editor for GNOME
     # snapshot --FLATPAK-- # Take pictures and videos on your computer, tablet, or phone
     # baobab # --DNF-- Graphical application to analyse disk usage in any GNOME environment
     # firefox-unwrapped # A web browser built from Firefox source tree

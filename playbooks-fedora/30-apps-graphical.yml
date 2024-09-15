@@ -110,18 +110,6 @@
         method: user
         state: present
 
-    - name: "Install 'Discord'"
-      community.general.flatpak:
-        name: com.discordapp.Discord
-        method: user
-        state: present
-
-    - name: "Install 'Extensions'"
-      community.general.flatpak:
-        name: org.gnome.Extensions
-        method: user
-        state: present
-
     - name: "Install 'Flatseal'"
       community.general.flatpak:
         name: com.github.tchx84.Flatseal
@@ -131,12 +119,6 @@
     - name: "Install 'GNOME Text Editor'"
       community.general.flatpak:
         name: org.gnome.TextEditor
-        method: user
-        state: present
-
-    - name: "Install 'Hexchat'"
-      community.general.flatpak:
-        name: io.github.Hexchat
         method: user
         state: present
 
