@@ -1,6 +1,9 @@
 - name: "Install Terminal Applications"
   hosts: localhost
 
+  vars:
+    starship_installer: "installer-starship.sh"
+
   tasks:
     - name: "Install 'bat' - Modern 'cat' Alternative"
       become: yes
@@ -53,6 +56,25 @@
         state: present
         name:
           - fastfetch
+
+    - name: "Install Fish Shell"
+      become: yes
+      dnf:
+        state: present
+        name:
+          - fish
+
+    - name: "Download Starship Installer"
+      become: true
+      get_url:
+        url: https://starship.rs/install.sh
+        dest: "~/{{ starship_installer }}"
+
+    - name: "Run Starship Installer"
+      become: true
+      shell: |
+        cd ~
+        sh {{ starship_installer }} -y
 
     - name: "Install 'procs' - Modern 'ps' Alternative"
       become: yes

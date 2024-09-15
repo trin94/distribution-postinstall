@@ -22,7 +22,6 @@
     shellAliases = {
       "shutdown" = "sudo shutdown now";
       "restart" = "sudo restart now";
-      "config" = "/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME";
 
       "dnf" = "dnf -C";
       "k" = "kubectl";
