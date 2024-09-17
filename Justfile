@@ -6,7 +6,7 @@ _list:
     @just --list
 
 verify:
-	@home-manager build -f nix/home.nix
+	@home-manager build -f nix/home.nix --show-trace
 
 # Apply current configuration
 apply:
@@ -27,7 +27,7 @@ add-nix-program NAME:
 	#! /usr/bin/env bash
 
 	cat <<EOT >> nix/program/{{ NAME }}.nix
-	{ config, pkgs, ... }:
+	{ config, pkgs, libs, ... }:
 
 	{
 

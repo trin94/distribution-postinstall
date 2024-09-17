@@ -65,3 +65,10 @@ This is not supported out of the box. As a workaround we can do:
   ```shell
   home-manager switch
   ```
+
+# Emergency
+
+* If nix binaries are suddenly not found:
+  ```shell
+  source ~/.nix-profile/etc/profile.d/nix.sh
+  ```

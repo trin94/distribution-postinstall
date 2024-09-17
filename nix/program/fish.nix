@@ -3,9 +3,17 @@
 {
 
   home.packages = with pkgs; [
+    #bash # GNU Bourne-Again Shell, the de facto standard shell on Linux
     fish # Smart and user-friendly command line shell
     starship # A minimal, blazing fast, and extremely customizable prompt for any shell
   ];
+
+  #programs.bash = {
+  # enable = true;
+  #initExtra = ''
+  # fish
+  #'';
+  #};
 
   programs.starship = {
     enable = true;
