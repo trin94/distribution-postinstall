@@ -36,7 +36,6 @@
       "kctx" = "kubectx";
       "kns" = "kubens";
       "qmltestrunner" = "qmltestrunner-qt6";
-      "vim" = "nvim";
 
       "ll" = "lsd -alA";
       "ls" = "lsd -l";

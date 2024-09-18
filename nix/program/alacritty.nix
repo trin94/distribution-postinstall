@@ -24,7 +24,7 @@
           blue = "0x51afef";
           magenta = "0xc678dd";
           cyan = "0x5699af";
-          white = "0x202328";
+          white = "0xabb2bf";
         };
 
         bright = {
@@ -39,9 +39,14 @@
         };
       };
 
-      cursor.style = {
-        blinking = "On";
-        shape = "Beam";
+      cursor = {
+        text = "CellBackground";
+        cursor = "0x528bff";
+
+        style = {
+          blinking = "On";
+          shape = "Beam";
+        };
       };
 
       font = {
@@ -55,6 +60,8 @@
 
       selection = {
         save_to_clipboard = true;
+        text = "CellForeground";
+        background = "0x3e4451";
       };
 
       shell = {

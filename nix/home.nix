@@ -17,7 +17,6 @@
     ./program/fd.nix
     ./program/fish.nix
     ./program/git.nix
-    ./program/helix.nix
     ./program/hugo.nix
     ./program/jq.nix
     ./program/just.nix
@@ -26,6 +25,7 @@
     ./program/procs.nix
     ./program/ripgrep.nix
     ./program/tokei.nix
+    ./program/vim.nix
     ./program/yq.nix
     ./program/yt-dlp.nix
   ];
@@ -80,7 +80,7 @@
   ];
 
   home.sessionVariables = {
-    EDITOR = "hx";
+    # EDITOR = "nvim";
     # LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
   };
 
