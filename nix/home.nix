@@ -79,10 +79,7 @@
     # jetbrains-toolbox
   ];
 
-  home.sessionVariables = {
-    # EDITOR = "nvim";
-    # LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
-  };
+  home.sessionVariables = {};
 
   home.sessionPath = [
     "$HOME/.local/bin"

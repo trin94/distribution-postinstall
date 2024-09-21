@@ -57,7 +57,7 @@
         description = "Download YT videos";
         body = ''
           yt-dlp -f bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best -o '%(upload_date)s - %(channel)s - %(id)s - %(title)s.%(ext)s' \
-           --sponsorblock-mark "all" \
+           --sponsorblock-remove "all" \
            --geo-bypass \
            --sub-langs 'all' \
            --embed-subs \
