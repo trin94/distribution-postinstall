@@ -77,9 +77,10 @@
     # python312 # A high-level dynamically-typed programming language
     # python312Packages.pyside6
     # jetbrains-toolbox
+    poetry
   ];
 
-  home.sessionVariables = {};
+  home.sessionVariables = { };
 
   home.sessionPath = [
     "$HOME/.local/bin"
