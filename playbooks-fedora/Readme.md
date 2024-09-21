@@ -11,7 +11,6 @@ ansible-playbook --ask-become-pass 50-utilities.yml
 ansible-playbook --ask-become-pass 60-fonts.yml
 
 ansible-playbook --ask-become-pass apps-docker.yml
-ansible-playbook --ask-become-pass apps-git.yml
 ansible-playbook --ask-become-pass apps-java.yml
 ansible-playbook --ask-become-pass apps-node.yml
 ```
