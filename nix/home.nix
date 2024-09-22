@@ -78,6 +78,7 @@
     # python312Packages.pyside6
     # jetbrains-toolbox
     poetry
+    ffmpeg_7-full
   ];
 
   home.sessionVariables = { };
